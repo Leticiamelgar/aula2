@@ -71,6 +71,49 @@ int selecao (int vet [], int n)
     
 }
 
+void mergesort (int vet[], int inicio, int meio, int final)
+{
+    int meio;
+    if (inicio < final)
+    {
+        meio = (inicio+final)/2;
+        mergesort(vet[],inicio,meio);
+        mergesort(vet[],meio+1, final);
+        merge(vet[],inicio,final,meio);
+    }
+    
+
+}
+
+void merge (int *vet, int inicio, int final, int meio)
+{
+    int i, j, k, c[50];
+    i=inicio;
+    k=inicio;
+    j=mid+1;
+
+    while (i <= mid && j<=final)
+    {
+        if (vet[i] < vet [j])
+        {
+            c[k]=vet[i];
+            k++;
+            i++;
+        }
+        else
+        {
+            c[k]=vet[j];
+            k++;
+            j++;
+        }
+    }
+    while (i <= meio)
+    {
+        
+    }
+
+}
+
 
 int main (){
     int vet [5];
